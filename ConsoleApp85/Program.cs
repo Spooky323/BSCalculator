@@ -93,6 +93,9 @@ namespace ScoreAcc
             int choice = int.Parse(Console.ReadLine());
             int notes = (int)(jdata["metadata"]["characteristics"][0]["difficulties"]["" + (Diffs)choice + ""]["notes"]);
             Map map = new Map(key, notes, (Diffs)choice);       // Building the Map Object
+            response.Close();
+            stream.Close();
+            reader.Close();
             return map;
         }
         static void Main(string[] args)
